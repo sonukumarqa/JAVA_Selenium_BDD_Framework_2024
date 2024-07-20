@@ -29,7 +29,7 @@ public OfferPageStepDefinition(TestContextSetUp testContextSetup) {
 @Then("user searched for {string} shortname in offers page")
 public void user_searched_for_same_shortname_in_offers_page_to_check_if_product_exist(String shortName) throws InterruptedException {
 	switchToOfferpage();
-    OffersPage offerPage= new OffersPage(testContextSetup.driver);
+    OffersPage offerPage= testContextSetup.pageObjectManager.getOfferPage();
     offerPage.searchItem(shortName);
 	offersPageProductName= offerPage.getProductName();
     System.out.println("offersPageProductName: "+ offersPageProductName);                                             
@@ -43,16 +43,11 @@ public void user_searched_for_same_shortname_in_offers_page_to_check_if_product_
 //	    }
 	 
 	   // LandingPage landingPage= new LandingPage(testContextSetup.driver);
-	 LandingPage landingPage= testContextSetup.pageObjectManager.getLandingPage();
+	    LandingPage landingPage= testContextSetup.pageObjectManager.getLandingPage();
 	    Thread.sleep(3000);
 	    landingPage.selectTopDeals();
-	    testContextSetup.driver.findElement(By.linkText("Top Deals")).click();		
-		Set<String> s1  = testContextSetup.driver.getWindowHandles();
-	    Iterator<String> i1= s1.iterator();
-	    String ParentWindow= i1.next();
-	    String childWindow= i1.next();
 	    
-	    testContextSetup.driver.switchTo().window(childWindow); 
+	    testContextSetup.genericUtils.SwichWindowToChild(); 
 	      
  }
 
@@ -60,7 +55,8 @@ public void user_searched_for_same_shortname_in_offers_page_to_check_if_product_
   public void validate_product_name_in_offers_page_matches_with_Landing_Page()
   {
 	Assert.assertEquals(offersPageProductName, testContextSetup.landingPageProductName);
-	testContextSetup.driver.quit();  
+	testContextSetup.genericUtils.TearDown();
+	
   }
 
 

@@ -9,9 +9,14 @@ public class TestContextSetUp {
 	public WebDriver driver;
 	public String landingPageProductName;
 	public PageObjectManager pageObjectManager;
-
+	public TestBase testBase; 
+    public GenericUtils genericUtils;
+    
 	public TestContextSetUp() {
 		
-		PageObjectManager pageObjectManager= new PageObjectManager();
+		testBase = new TestBase();
+		pageObjectManager= new PageObjectManager(testBase.WebDriverManagaer());
+		genericUtils = new GenericUtils(testBase.WebDriverManagaer());
+		
 	}
 }

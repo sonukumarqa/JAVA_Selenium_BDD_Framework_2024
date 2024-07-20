@@ -11,7 +11,7 @@ public class PageObjectManager {
 	 
 
 
- public void PageObjectManage(WebDriver drive) {
+ public PageObjectManager(WebDriver driver) {
 	 
 	 this.driver=driver;
  }

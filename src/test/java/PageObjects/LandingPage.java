@@ -12,9 +12,9 @@ public class LandingPage {
 		this.driver=driver;
 	}
 
-  private By search= By.xpath("//input[@type='search']");
-  private By productName= By.cssSelector("h4.product-name");
-  private By topDeals= By.linkText("Top Deals");
+  By search= By.xpath("//input[@type='search']");
+  By productName= By.cssSelector("h4.product-name");
+  By topDeals= By.linkText("Top Deals");
 	
 	public void  searchItem(String name) {
 		

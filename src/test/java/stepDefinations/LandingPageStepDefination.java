@@ -32,11 +32,11 @@ public LandingPageStepDefination(TestContextSetUp testContextSetup) {
 @Given("User is on GreeCart Landing  Page")
 public void user_is_on_gree_cart_landing_page() {
    
-	System.setProperty("webdriver.chrome.driver", "E://ECLIPSEWorknew//CucumberFramework//chromedriver.exe");
-	testContextSetup.driver= new ChromeDriver();
-	testContextSetup.driver.manage().window().maximize();
-	testContextSetup.driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
-	testContextSetup.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//	System.setProperty("webdriver.chrome.driver", "E://ECLIPSEWorknew//CucumberFramework//chromedriver.exe");
+//	testContextSetup.driver= new ChromeDriver();
+//	testContextSetup.driver.manage().window().maximize();
+//	testContextSetup.driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+//	testContextSetup.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 }
 
 
